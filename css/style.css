@@ -1,5 +1,15 @@
-.container {
-  max-width: 1140px;
+.hero__btn {
+  display: block;
+  padding: 28px 22px;
+  background-color: #A70B0B;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer; }
+
+.wrapper {
+  max-width: 1170px;
   margin: 0 auto; }
 
 * {
@@ -9,124 +19,86 @@
   list-style: none;
   text-decoration: none; }
 
-@media (max-width: 1160px) {
-  .container {
-    padding: 0 20px; } }
-
 body {
-  color: #555555;
-  font-family: "Roboto Slab", serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
-  padding-bottom: 285px;
   scroll-behavior: smooth; }
 
-.sctitle {
-  text-transform: uppercase;
-  font-family: "Montserrat", sans-serif;
-  font-size: 20px;
-  text-align: center;
+.odd {
+  background-color: #663F04;
   position: relative;
-  padding-bottom: 60px; }
-  .sctitle:before {
+  overflow: hidden; }
+  .odd::before {
     position: absolute;
-    content: " ";
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    width: 50px;
-    height: 2px;
-    background-color: #555555; }
+    content: "";
+    left: 94px;
+    top: 0;
+    width: 85%;
+    height: 638px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0px 4px 250px rgba(255, 216, 180, 0.35); }
 
-.undertitle {
-  font-size: 16px;
-  text-align: center;
-  margin-bottom: 70px; }
-
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 3;
-  background-color: rgba(192, 48, 28, 0.7);
-  text-align: center;
-  color: #fff;
-  font-size: 30px;
-  padding: 20%;
-  transition: 1s all;
-  opacity: 1;
-  visibility: visible; }
-
-.loader {
-  width: 90px;
-  height: 90px;
-  border: 10px solid white;
-  border-radius: 50%;
-  border-top-color: #c0301c;
-  line-height: 60px;
+.shadow-text {
+  font-weight: 500;
+  font-size: 9px;
   color: white;
-  padding: 5px;
+  opacity: .2;
+  letter-spacing: 0.3em;
+  padding-top: 5px; }
+
+.hero {
+  padding-left: 12%;
+  color: white;
+  height: 100vh; }
+  .hero__main {
+    position: relative; }
+  .hero__left {
+    width: 435px;
+    float: left; }
+  .hero__h2 {
+    font-family: "Vollkorn", serif;
+    font-size: 40px;
+    line-height: 50px;
+    font-style: normal;
+    font-weight: normal;
+    padding-bottom: 20px;
+    width: 440px; }
+  .hero__text {
+    font-weight: 500;
+    font-size: 20px;
+    padding: 20px 0;
+    width: 430px;
+    border-top: 11px solid #DBAB00; }
+  .hero__btn {
+    box-shadow: 0px 0px 15px #DD9E23;
+    width: 318px;
+    margin-top: 30px; }
+  .hero__bottom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 40px; }
+    .hero__bottom-text {
+      font-style: italic;
+      font-weight: bold;
+      font-size: 14px;
+      display: inline-block;
+      opacity: 1; }
+    .hero__bottom-sign {
+      display: inline-block; }
+
+.logo {
+  padding: 32px 0 52px 0; }
+
+.bg-image {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  animation: spin 1s infinite; }
-
-.done {
-  opacity: 0;
-  visibility: hidden; }
-
-#left,
-#right {
-  display: inline-block; }
-
-@keyframes spin {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg); }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg); } }
-
-@media only screen and (max-width: 768px) {
-  body {
-    padding-bottom: 195px; } }
-
-@media only screen and (max-width: 576px) {
-  .undertitle {
-    margin-bottom: 20px; } }
-
-@media only screen and (max-width: 470px) and (min-width: 320px) {
-  body {
-    padding-bottom: 135px; }
-  .sctitle {
-    padding-bottom: 30px; }
-    .sctitle:before {
-      top: 30px; } }
-
-@keyframes rubberBand {
-  from {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1); }
-  30% {
-    -webkit-transform: scale3d(1.25, 0.75, 1);
-    transform: scale3d(1.25, 0.75, 1); }
-  40% {
-    -webkit-transform: scale3d(0.75, 1.25, 1);
-    transform: scale3d(0.75, 1.25, 1); }
-  50% {
-    -webkit-transform: scale3d(1.15, 0.85, 1);
-    transform: scale3d(1.15, 0.85, 1); }
-  65% {
-    -webkit-transform: scale3d(0.95, 1.05, 1);
-    transform: scale3d(0.95, 1.05, 1); }
-  75% {
-    -webkit-transform: scale3d(1.05, 0.95, 1);
-    transform: scale3d(1.05, 0.95, 1); }
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1); } }
-
-.rubberBand {
-  -webkit-animation-name: rubberBand;
-  animation-name: rubberBand; }
+  right: 0;
+  bottom: 0;
+  display: inline-block;
+  float: right;
+  width: 50%; }
