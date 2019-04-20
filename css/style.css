@@ -8,10 +8,6 @@
   font-size: 18px;
   cursor: pointer; }
 
-.wrapper {
-  max-width: 1170px;
-  margin: 0 auto; }
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -23,6 +19,10 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   scroll-behavior: smooth; }
+
+.wrapper {
+  max-width: 1170px;
+  margin: 0 auto; }
 
 .odd {
   background-color: #663F04;
@@ -38,6 +38,13 @@ body {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.12);
     box-shadow: 0px 4px 250px rgba(255, 216, 180, 0.35); }
+  .odd .bg-image {
+    position: absolute;
+    right: 30px;
+    bottom: 0;
+    display: inline-block;
+    max-width: 590px;
+    width: 50%; }
 
 .shadow-text {
   font-weight: 500;
@@ -46,6 +53,22 @@ body {
   opacity: .2;
   letter-spacing: 0.3em;
   padding-top: 5px; }
+
+@media only screen and (max-width: 1000px) {
+  .odd .bg-image {
+    right: -77px; } }
+
+@media only screen and (max-width: 576px) {
+  .odd::before {
+    width: 70%;
+    left: 45px;
+    top: -20px; }
+  .odd .bg-image {
+    width: 251px; } }
+
+@media only screen and (max-width: 470px) and (min-width: 320px) {
+  .shadow-text {
+    font-size: 5px; } }
 
 .hero {
   padding-left: 12%;
@@ -95,10 +118,42 @@ body {
 .logo {
   padding: 32px 0 52px 0; }
 
-.bg-image {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  display: inline-block;
-  float: right;
-  width: 50%; }
+@media only screen and (max-width: 1000px) {
+  .hero {
+    padding-left: 5%; }
+    .hero__bottom {
+      padding: 10px; }
+    .hero__btn {
+      margin: 0; } }
+
+@media only screen and (max-width: 768px) {
+  .hero__h2 {
+    width: 100%;
+    font-size: 32px; }
+  .hero__text {
+    width: 55%;
+    font-size: 18px; }
+  .logo {
+    padding: 30px 0; } }
+
+@media only screen and (max-width: 576px) {
+  .logo {
+    padding: 10px 0; }
+  .hero__h2 {
+    font-size: 24px; }
+  .hero__text {
+    font-size: 14px;
+    border-top: 5px solid #DBAB00; }
+  .hero__btn {
+    width: 55%;
+    text-align: center; } }
+
+@media only screen and (max-width: 470px) and (min-width: 320px) {
+  .hero__bottom-sign {
+    order: -1;
+    width: 55px; }
+  .hero__bottom-text {
+    font-size: 7px; }
+  .hero__btn {
+    font-size: 12px;
+    font-style: normal; } }
