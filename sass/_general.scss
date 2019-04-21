@@ -16,6 +16,11 @@ serif;
     font-size: 18px;
     cursor: pointer;
     text-align: center;
+    transition: all .5s;
+
+    &:hover {
+        animation: shake 1.5s 1;
+    }
 }
 
 %bordered {
@@ -84,6 +89,58 @@ body {
     text-transform: uppercase;
 }
 
+@-webkit-keyframes shake {
+
+    from,
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+}
+
+@keyframes shake {
+
+    from,
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+}
+
 
 @media only screen and (max-width: 1000px) {
     .odd .bg-image {
@@ -119,8 +176,7 @@ body {
 
 
 
-
-////
+/// not true
 .blank {
     padding: 20px 12%;
     margin: 0 auto;
