@@ -82,6 +82,12 @@ body {
   .shadow-text {
     font-size: 5px; } }
 
+.blank {
+  padding: 20px 12%;
+  margin: 0 auto; }
+  .blank__img {
+    width: 100%; }
+
 .hero {
   padding-left: 12%;
   color: white;
@@ -210,7 +216,8 @@ body {
 .diplom__main {
   padding: 20px 12%;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  position: relative; }
 
 .diplom__context {
   padding-right: 40px; }
@@ -225,7 +232,18 @@ body {
   width: 100%;
   height: 197px;
   position: relative;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: all .2s ease-in; }
+  .diplom__img:hover .diplom__scale {
+    transform: scale(1); }
+
+.diplom__scale {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transition: all .3s ease-in;
+  transform: scale(0.01);
+  color: grey; }
 
 .diplom__name {
   position: absolute;
@@ -253,11 +271,24 @@ body {
   background: rgba(242, 214, 116, 0.58);
   margin-bottom: 30px; }
 
+.diplom__slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1; }
+
+.hide {
+  display: none; }
+
 .slider {
   padding: 50px 10px 0 10px;
-  cursor: pointer; }
+  cursor: pointer;
+  position: relative; }
   .slider__img {
     width: 234px; }
+  .slider:hover .diplom__scale {
+    transform: scale(1); }
 
 .yellow {
   color: #DBAB00; }
@@ -272,6 +303,46 @@ body {
   font-weight: bold;
   font-family: "Vollkorn", serif;
   line-height: normal; }
+
+.scaled {
+  transform: scale(2.5);
+  transform-origin: right; }
+
+.mySlides {
+  display: none; }
+  .mySlides img {
+    width: 100%; }
+
+img {
+  vertical-align: middle; }
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 70%;
+  position: relative;
+  margin: auto; }
+
+.showSlide {
+  display: block; }
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 0.5s;
+  animation-name: fade;
+  animation-duration: 0.5s; }
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4; }
+  to {
+    opacity: 1; } }
+
+@keyframes fade {
+  from {
+    opacity: .4; }
+  to {
+    opacity: 1; } }
 
 @media only screen and (max-width: 900px) {
   .diplom__title {
@@ -290,7 +361,9 @@ body {
     font-size: 12px;
     line-height: 18px; }
   .diplom__title::before, .diplom__title::after {
-    transform: scale(1); } }
+    transform: scale(1); }
+  .scaled {
+    transform: scale(2); } }
 
 @media only screen and (max-width: 700px) {
   .diplom__title {
@@ -317,7 +390,10 @@ body {
     padding-top: 20px; }
   .banner {
     font-size: 24px;
-    padding: 10px; } }
+    padding: 10px; }
+  .scaled {
+    transform: scale(1.5);
+    transform-origin: center; } }
 
 @media only screen and (max-width: 505px) {
   .diplom {
@@ -360,4 +436,6 @@ body {
   .diplom__border {
     border-radius: 0; }
   .diplom .diplom__title::before, .diplom .diplom__title::after {
-    transform: scale(0.8); } }
+    transform: scale(0.8); }
+  .scaled {
+    transform: scale(1); } }

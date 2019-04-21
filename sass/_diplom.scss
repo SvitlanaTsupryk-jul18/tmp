@@ -51,6 +51,7 @@
         padding: 20px 12%;
         display: flex;
         justify-content: space-between;
+        position: relative;
     }
 
     &__context {
@@ -70,6 +71,20 @@
         height: 197px;
         position: relative;
         cursor: pointer;
+        transition: all .2s ease-in;
+
+        &:hover .diplom__scale {
+            transform: scale(1);
+        }
+    }
+
+    &__scale {
+        position: absolute;
+        top: 40%;
+        left: 40%;
+        transition: all .3s ease-in;
+        transform: scale(0.01);
+        color: grey;
     }
 
     &__name {
@@ -107,14 +122,31 @@
         background: rgba(242, 214, 116, 0.58);
         margin-bottom: 30px;
     }
+
+    &__slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+    }
+}
+
+.hide {
+    display: none;
 }
 
 .slider {
     padding: 50px 10px 0 10px;
     cursor: pointer;
+    position: relative;
 
     &__img {
         width: 234px;
+    }
+
+    &:hover .diplom__scale {
+        transform: scale(1);
     }
 }
 
@@ -132,6 +164,62 @@
     font-weight: bold;
     font-family: $text-font;
     line-height: normal;
+}
+
+.scaled {
+    transform: scale(2.5);
+    transform-origin: right;
+}
+
+.mySlides {
+    display: none;
+
+    img {
+        width: 100%;
+    }
+}
+
+img {
+    vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 70%;
+    position: relative;
+    margin: auto;
+}
+
+.showSlide {
+    display: block;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 0.5s;
+    animation-name: fade;
+    animation-duration: 0.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
 }
 
 @media only screen and (max-width: 900px) {
@@ -170,6 +258,10 @@
 
     %pse {
         transform: scale(1);
+    }
+
+    .scaled {
+        transform: scale(2);
     }
 }
 
@@ -224,6 +316,11 @@
     .banner {
         font-size: 24px;
         padding: 10px;
+    }
+
+    .scaled {
+        transform: scale(1.5);
+        transform-origin: center;
     }
 }
 
@@ -304,5 +401,10 @@
         %pse {
             transform: scale(0.8);
         }
+    }
+
+    .scaled {
+        transform: scale(1);
+
     }
 }
