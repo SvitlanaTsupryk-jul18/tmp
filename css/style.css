@@ -9,7 +9,7 @@
   cursor: pointer;
   text-align: center; }
 
-.diplom__border {
+.leaf-border {
   display: block;
   border-bottom: 11px solid #DBAB00; }
 
@@ -75,7 +75,7 @@ body {
     top: -20px; }
   .odd .bg-image {
     width: 251px; }
-  .diplom__border {
+  .leaf-border {
     display: block;
     border-bottom: 5px solid #DBAB00; } }
 
@@ -177,7 +177,7 @@ body {
     font-size: 12px;
     font-style: normal; } }
 
-.diplom__title::before, .diplom__title::after {
+.leaf::before, .leaf::after {
   content: "";
   position: absolute;
   background-size: contain;
@@ -186,33 +186,28 @@ body {
   height: 100%;
   transform: scale(1.5); }
 
-.diplom__title {
-  font-family: "Vollkorn", serif;
-  font-size: 30px;
-  line-height: 38px;
+.leaf {
   position: relative;
   padding: 20px;
   margin: 0 auto;
-  text-align: center;
-  font-weight: bold;
   overflow: hidden; }
-  .diplom__title::before {
+  .leaf::before {
     left: 3%;
     background-image: url(../images/leaves.svg); }
-  .diplom__title::after {
+  .leaf::after {
     right: 4%;
     bottom: -8px;
     background-image: url(../images/leaves-left.svg); }
 
+.diplom__title {
+  font-family: "Vollkorn", serif;
+  font-size: 30px;
+  line-height: 38px;
+  text-align: center;
+  font-weight: bold; }
+
 .diplom__h2 {
   font-size: 30px; }
-
-.diplom__border {
-  width: 65%;
-  height: 1px;
-  margin: 0 auto;
-  padding-bottom: 13px;
-  border-radius: 10px; }
 
 .diplom__main {
   padding: 20px 12%;
@@ -278,6 +273,13 @@ body {
   left: 0;
   width: 100%;
   z-index: 1; }
+
+.leaf-border {
+  width: 65%;
+  height: 1px;
+  margin: 0 auto;
+  padding-bottom: 13px;
+  border-radius: 10px; }
 
 .hide {
   display: none; }
@@ -352,36 +354,32 @@ img {
     padding: 20px 5%; } }
 
 @media only screen and (max-width: 768px) {
-  .diplom__title::before {
-    left: 10px;
-    bottom: -20%; }
-  .diplom__title::after {
-    right: 10px;
-    bottom: -33px; }
   .diplom__text {
     font-size: 12px;
     line-height: 18px; }
-  .diplom__title::before, .diplom__title::after {
+  .leaf::before {
+    left: 10px;
+    bottom: -20%; }
+  .leaf::after {
+    right: 10px;
+    bottom: -33px; }
+  .leaf::before, .leaf::after {
     transform: scale(1); }
   .scaled {
     transform: scale(2); } }
 
 @media only screen and (max-width: 700px) {
-  .diplom__title {
+  .leaf {
     padding: 20px 100px; }
-    .diplom__title::before {
+    .leaf::before {
       bottom: -30%; }
-    .diplom__title::after {
+    .leaf::after {
       bottom: -27%; }
-  .diplom__border {
+  .leaf-border {
     width: 70%;
     border-bottom: 6px solid #DBAB00; } }
 
 @media only screen and (max-width: 620px) {
-  .diplom__title::before {
-    bottom: -39.5%; }
-  .diplom__title::after {
-    bottom: -37%; }
   .diplom__main {
     flex-wrap: wrap; }
   .diplom__context {
@@ -389,6 +387,10 @@ img {
   .diplom__right {
     margin: 0 auto;
     padding-top: 20px; }
+  .leaf::before {
+    bottom: -39.5%; }
+  .leaf::after {
+    bottom: -37%; }
   .banner {
     font-size: 24px;
     padding: 10px; }
@@ -399,15 +401,6 @@ img {
 @media only screen and (max-width: 505px) {
   .diplom {
     overflow: hidden; }
-    .diplom__title {
-      padding: 20px 50px; }
-      .diplom__title::before {
-        bottom: -45%; }
-      .diplom__title::after {
-        bottom: -42.5%; }
-    .diplom__border {
-      width: 40%;
-      padding-bottom: 41px; }
     .diplom__h3 {
       font-size: 14px; }
     .diplom__text {
@@ -417,27 +410,36 @@ img {
       margin: 0 -30px 30px -30px; }
     .diplom__context {
       padding: 0; }
+  .leaf {
+    padding: 20px 50px; }
+    .leaf::before {
+      bottom: -45%; }
+    .leaf::after {
+      bottom: -42.5%; }
+  .leaf-border {
+    width: 40%;
+    padding-bottom: 41px; }
   .banner {
     margin: 20px 0; } }
 
 @media only screen and (max-width: 405px) {
-  .diplom__title {
-    padding: 20px; }
-    .diplom__title::before {
-      bottom: -45%;
-      left: -30px; }
-    .diplom__title::after {
-      bottom: -42.5%;
-      right: -30px; }
   .diplom__subtitle {
     font-size: 18px; }
     .diplom__subtitle .red {
       font-size: 24px;
       font-weight: bold; }
-  .diplom__border {
-    border-radius: 0; }
-  .diplom .diplom__title::before, .diplom .diplom__title::after {
+  .diplom .leaf::before, .diplom .leaf::after {
     transform: scale(0.8); }
+  .leaf {
+    padding: 20px; }
+    .leaf::before {
+      bottom: -45%;
+      left: -30px; }
+    .leaf::after {
+      bottom: -42.5%;
+      right: -30px; }
+  .leaf-border {
+    border-radius: 0; }
   .scaled {
     transform: scale(1); } }
 

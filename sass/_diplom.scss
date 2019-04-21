@@ -8,43 +8,37 @@
     transform: scale(1.5);
 }
 
+.leaf {
+    position: relative;
+    padding: 20px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    &::before {
+        @extend %pse;
+        left: 3%;
+        background-image: url(../images/leaves.svg);
+    }
+
+    &::after {
+        @extend %pse;
+        right: 4%;
+        bottom: -8px;
+        background-image: url(../images/leaves-left.svg);
+    }
+}
+
 .diplom {
     &__title {
         font-family: $text-font;
         font-size: 30px;
         line-height: 38px;
-        position: relative;
-        padding: 20px;
-        margin: 0 auto;
         text-align: center;
         font-weight: bold;
-        overflow: hidden;
-
-        &::before {
-            @extend %pse;
-            left: 3%;
-            background-image: url(../images/leaves.svg);
-        }
-
-        &::after {
-            @extend %pse;
-            right: 4%;
-            bottom: -8px;
-            background-image: url(../images/leaves-left.svg);
-        }
     }
 
     &__h2 {
         font-size: 30px;
-    }
-
-    &__border {
-        width: 65%;
-        height: 1px;
-        margin: 0 auto;
-        padding-bottom: 13px;
-        @extend %bordered;
-        border-radius: 10px;
     }
 
     &__main {
@@ -130,6 +124,15 @@
         width: 100%;
         z-index: 1;
     }
+}
+
+.leaf-border {
+    width: 65%;
+    height: 1px;
+    margin: 0 auto;
+    padding-bottom: 13px;
+    @extend %bordered;
+    border-radius: 10px;
 }
 
 .hide {
@@ -236,24 +239,21 @@ img {
 
 
 @media only screen and (max-width: 768px) {
-    .diplom {
-        &__title {
-            &::before {
-                left: 10px;
-                bottom: -20%;
-            }
+    .diplom__text {
+        font-size: 12px;
+        line-height: 18px;
+    }
 
-            &::after {
-                right: 10px;
-                bottom: -33px;
-            }
+    .leaf {
+        &::before {
+            left: 10px;
+            bottom: -20%;
         }
 
-        &__text {
-            font-size: 12px;
-            line-height: 18px;
+        &::after {
+            right: 10px;
+            bottom: -33px;
         }
-
     }
 
     %pse {
@@ -267,38 +267,27 @@ img {
 
 
 @media only screen and (max-width: 700px) {
-    .diplom {
-        &__title {
-            padding: 20px 100px;
+    .leaf {
+        padding: 20px 100px;
 
-            &::before {
-                bottom: -30%;
-            }
-
-            &::after {
-                bottom: -27%;
-            }
+        &::before {
+            bottom: -30%;
         }
 
-        &__border {
-            width: 70%;
-            border-bottom: 6px solid $main-color;
+        &::after {
+            bottom: -27%;
         }
     }
+
+    .leaf-border {
+        width: 70%;
+        border-bottom: 6px solid $main-color;
+    }
+
 }
 
 @media only screen and (max-width: 620px) {
     .diplom {
-        &__title {
-            &::before {
-                bottom: -39.5%;
-            }
-
-            &::after {
-                bottom: -37%;
-            }
-        }
-
         &__main {
             flex-wrap: wrap;
         }
@@ -310,6 +299,16 @@ img {
         &__right {
             margin: 0 auto;
             padding-top: 20px;
+        }
+    }
+
+    .leaf {
+        &::before {
+            bottom: -39.5%;
+        }
+
+        &::after {
+            bottom: -37%;
         }
     }
 
@@ -327,23 +326,6 @@ img {
 @media only screen and (max-width: 505px) {
     .diplom {
         overflow: hidden;
-
-        &__title {
-            padding: 20px 50px;
-
-            &::before {
-                bottom: -45%;
-            }
-
-            &::after {
-                bottom: -42.5%;
-            }
-        }
-
-        &__border {
-            width: 40%;
-            padding-bottom: 41px;
-        }
 
         &__h3 {
             font-size: 14px;
@@ -363,6 +345,24 @@ img {
         }
     }
 
+    .leaf {
+
+        padding: 20px 50px;
+
+        &::before {
+            bottom: -45%;
+        }
+
+        &::after {
+            bottom: -42.5%;
+        }
+    }
+
+    .leaf-border {
+        width: 40%;
+        padding-bottom: 41px;
+    }
+
     .banner {
         margin: 20px 0;
     }
@@ -370,19 +370,6 @@ img {
 
 @media only screen and (max-width: 405px) {
     .diplom {
-        &__title {
-            padding: 20px;
-
-            &::before {
-                bottom: -45%;
-                left: -30px;
-            }
-
-            &::after {
-                bottom: -42.5%;
-                right: -30px;
-            }
-        }
 
         &__subtitle {
             font-size: 18px;
@@ -393,14 +380,28 @@ img {
             }
         }
 
-        &__border {
-
-            border-radius: 0;
-        }
-
         %pse {
             transform: scale(0.8);
         }
+    }
+
+    .leaf {
+        padding: 20px;
+
+        &::before {
+            bottom: -45%;
+            left: -30px;
+        }
+
+        &::after {
+            bottom: -42.5%;
+            right: -30px;
+        }
+    }
+
+    .leaf-border {
+
+        border-radius: 0;
     }
 
     .scaled {
