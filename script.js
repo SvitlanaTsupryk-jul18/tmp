@@ -1,9 +1,20 @@
 (function () {
 
     // invocation
+
+    askName();
     smoothScrollLinks();
     scalingDiplom();
     showSlides();
+
+    ///ask user of his name
+
+    function askName() {
+        let name = prompt("Доброго дня! Як Вас звати?", "Лох");
+        let names = [...document.querySelectorAll(".name")];
+
+        names.forEach((el) => el.innerHTML = name)
+    }
 
     ////smoothScroll
 
